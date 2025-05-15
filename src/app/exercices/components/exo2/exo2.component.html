@@ -1,0 +1,21 @@
+<ul>
+  <ng-container *ngFor="let item of navigation">
+    <li *ngIf="item.isVisible">
+      <a [routerLink]="item.url">{{ item.title }}</a>
+      <ul *ngIf="item.children">
+        <ng-container *ngFor="let child of item.children">
+          <li *ngIf="child.isVisible">
+            <a [routerLink]="child.url">{{ child.title }}</a>
+            <ul *ngIf="child.children">
+              <ng-container *ngFor="let subChild of child.children">
+                <li *ngIf="subChild.isVisible">
+                  <a [routerLink]="subChild.url">{{ subChild.title }}</a>
+                </li>
+              </ng-container>
+            </ul>
+          </li>
+        </ng-container>
+      </ul>
+    </li>
+  </ng-container>
+</ul>
