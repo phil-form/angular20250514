@@ -1,0 +1,10 @@
+<form>
+  <app-input [control]="entityForm.get('name')"
+             (onChange)="onValueChange($event)"
+             [type]="'text'" [placeholder]="'Name'">
+  </app-input>
+  <app-input [control]="entityForm.get('quantity')" [type]="'number'" [placeholder]="'Quantity'">
+  </app-input>
+  <app-input [control]="entityForm.get('price')" [type]="'number'" [placeholder]="'Price'">
+  </app-input>
+</form>

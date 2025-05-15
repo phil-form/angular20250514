@@ -4,6 +4,7 @@ import {Exo4Component} from './components/exo4/exo4.component';
 import {Exo3Component} from './components/exo3/exo3.component';
 import {Exo2Component} from './components/exo2/exo2.component';
 import {NgModule} from '@angular/core';
+import {Exo5Component} from "./components/exo5/exo5.component";
 
 export const routes: Routes = [
   {
@@ -21,6 +22,10 @@ export const routes: Routes = [
   {
     path: 'exo4',
     component: Exo4Component,
+  },
+  {
+    path: 'exo5',
+    component: Exo5Component,
   },
 ]
 

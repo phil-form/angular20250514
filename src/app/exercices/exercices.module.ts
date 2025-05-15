@@ -12,6 +12,8 @@ import {ExercicesRoutingModule} from './exercices-router.module';
 import {FormsModule} from '@angular/forms';
 import { ItemFormComponent } from './components/exo4/item-form/item-form.component';
 import { ItemTableComponent } from './components/exo4/item-table/item-table.component';
+import { Exo5Component } from './components/exo5/exo5.component';
+import {SharedModule} from "../modules/shared/shared.module";
 
 
 
@@ -25,12 +27,14 @@ import { ItemTableComponent } from './components/exo4/item-table/item-table.comp
     BasketComponent,
     AddItemComponent,
     ItemFormComponent,
-    ItemTableComponent
+    ItemTableComponent,
+    Exo5Component
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ExercicesRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ExercicesRoutingModule,
+        SharedModule
+    ]
 })
 export class ExercicesModule { }

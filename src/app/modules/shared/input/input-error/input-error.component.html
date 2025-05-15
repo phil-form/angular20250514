@@ -1,0 +1,5 @@
+<div>
+  <ng-container *ngFor="let err of getErrorsAsArray(); let i = index; let last = last">
+    <small>{{ getErrorMessage(err) }}</small>
+  </ng-container>
+</div>
