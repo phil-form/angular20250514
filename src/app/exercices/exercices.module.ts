@@ -10,6 +10,8 @@ import { AddItemComponent } from './components/exo3/add-item/add-item.component'
 import {RouterLink} from '@angular/router';
 import {ExercicesRoutingModule} from './exercices-router.module';
 import {FormsModule} from '@angular/forms';
+import { ItemFormComponent } from './components/exo4/item-form/item-form.component';
+import { ItemTableComponent } from './components/exo4/item-table/item-table.component';
 
 
 
@@ -21,7 +23,9 @@ import {FormsModule} from '@angular/forms';
     Exo4Component,
     FormatTimerPipe,
     BasketComponent,
-    AddItemComponent
+    AddItemComponent,
+    ItemFormComponent,
+    ItemTableComponent
   ],
   imports: [
     CommonModule,

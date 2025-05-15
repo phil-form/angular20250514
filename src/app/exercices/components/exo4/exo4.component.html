@@ -1,1 +1,3 @@
-<p>exo4 works!</p>
+<h1>Exo 4</h1>
+<app-item-form (addItemEmitter)="refreshData()"></app-item-form>
+<app-item-table (deleteItemEmitter)="refreshData()" [items]="items"></app-item-table>
