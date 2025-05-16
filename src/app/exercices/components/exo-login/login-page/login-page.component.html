@@ -1,0 +1,9 @@
+<input [formControl]="$any(entityForm.get('username'))"
+       placeholder="username" type="text"><br/>
+<input [formControl]="entityForm.get('password')"
+       placeholder="password" type="text"><br/>
+<button (click)="login()">login</button>
+
+<div *ngIf="user">
+  logged as : {{ user.username }}
+</div>

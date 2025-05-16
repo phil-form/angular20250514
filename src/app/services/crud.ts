@@ -19,6 +19,11 @@ export class Crud<T> {
     return entity;
   }
 
+  protected transformEntities(entities: T[]): T[] {
+    // Implement any transformation logic if needed
+    return entities;
+  }
+
   find(id: any, params?: CrudParams<T>): Observable<T> {
     return this.http.get<T>(`${environment.api.url}/${this.config.single(id)}`, params)
       .pipe(map((e) => this.transformEntity(e)));
@@ -26,7 +31,8 @@ export class Crud<T> {
 
   findAll(params?: CrudParams<T>): Observable<T[]> {
     return this.http.get<T[]>(`${environment.api.url}/${this.config.many}`, params)
-      .pipe(map((entities) => entities.map((e) => this.transformEntity(e))));
+      // .pipe(map((entities) => entities.map((e) => this.transformEntity(e))));
+      .pipe(map((entities) => this.transformEntities(entities)));
   }
 
   post(entity: T, params?: CrudParams<T>): Observable<T> {

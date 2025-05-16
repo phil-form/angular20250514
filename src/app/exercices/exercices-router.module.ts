@@ -5,6 +5,9 @@ import {Exo3Component} from './components/exo3/exo3.component';
 import {Exo2Component} from './components/exo2/exo2.component';
 import {NgModule} from '@angular/core';
 import {Exo5Component} from "./components/exo5/exo5.component";
+import {LoginPageComponent} from './components/exo-login/login-page/login-page.component';
+import {ProductsComponent} from './components/exo-login/products/products.component';
+import {authGuard} from '../modules/shared/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -26,6 +29,17 @@ export const routes: Routes = [
   {
     path: 'exo5',
     component: Exo5Component,
+  },
+  {
+    path: 'exo-login',
+    component: LoginPageComponent,
+  },
+  {
+    path: 'exo-product',
+    component: ProductsComponent,
+    canActivate: [
+      authGuard,
+    ]
   },
 ]
 

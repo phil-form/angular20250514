@@ -12,7 +12,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     InputErrorComponent
   ],
   exports: [
-    InputComponent
+    InputComponent,
+    ReactiveFormsModule,
   ],
   imports: [
     CommonModule,

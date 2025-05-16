@@ -14,6 +14,8 @@ import { ItemFormComponent } from './components/exo4/item-form/item-form.compone
 import { ItemTableComponent } from './components/exo4/item-table/item-table.component';
 import { Exo5Component } from './components/exo5/exo5.component';
 import {SharedModule} from "../modules/shared/shared.module";
+import { LoginPageComponent } from './components/exo-login/login-page/login-page.component';
+import { ProductsComponent } from './components/exo-login/products/products.component';
 
 
 
@@ -28,7 +30,9 @@ import {SharedModule} from "../modules/shared/shared.module";
     AddItemComponent,
     ItemFormComponent,
     ItemTableComponent,
-    Exo5Component
+    Exo5Component,
+    LoginPageComponent,
+    ProductsComponent
   ],
     imports: [
         CommonModule,
