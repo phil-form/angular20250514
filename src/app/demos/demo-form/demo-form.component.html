@@ -1,12 +1,28 @@
 <form fxLayout="column" fxLayoutAlign="start start">
-  <input [formControl]="$any(entityForm.get('lastName'))" placeholder="lastName" type="text"><br/>
-  <small *ngIf="entityForm.get('lastName').errors" style="color: red">{{ getErrorMessage(entityForm.get('lastName').errors) }}</small><br/>
-  <input [formControl]="entityForm.get('firstName')" placeholder="firstName" type="text"><br/>
-  <small *ngIf="entityForm.get('firstName').errors" style="color: red">{{ getErrorMessage(entityForm.get('firstName').errors) }}</small><br/>
-  <input [formControl]="entityForm.get('email')" placeholder="email" type="email"><br/>
-  <small *ngIf="entityForm.get('email').errors" style="color: red">{{ getErrorMessage(entityForm.get('email').errors) }}</small><br/>
-  <input [formControl]="entityForm.get('age')" placeholder="age" type="number"><br/>
-  <small *ngIf="entityForm.get('age').errors" style="color: red">{{ getErrorMessage(entityForm.get('age').errors) }}</small><br/>
+  <input [formControl]="$any(entityForm.get('lastName'))"
+         [disabled]="cannotEdit()"
+         placeholder="lastName" type="text"><br/>
+  <small *ngIf="entityForm.get('lastName').errors" style="color: red">
+    {{ getErrorMessage(entityForm.get('lastName').errors) }}
+  </small><br/>
+  <input [formControl]="entityForm.get('firstName')"
+         [disabled]="cannotEdit()"
+         placeholder="firstName" type="text"><br/>
+  <small *ngIf="entityForm.get('firstName').errors" style="color: red">
+    {{ getErrorMessage(entityForm.get('firstName').errors) }}
+  </small><br/>
+  <input [formControl]="entityForm.get('email')"
+         [disabled]="cannotEdit()"
+         placeholder="email" type="email"><br/>
+  <small *ngIf="entityForm.get('email').errors" style="color: red">
+    {{ getErrorMessage(entityForm.get('email').errors) }}
+  </small><br/>
+  <input [formControl]="entityForm.get('age')"
+         [disabled]="cannotEdit()"
+         placeholder="age" type="number"><br/>
+  <small *ngIf="entityForm.get('age').errors" style="color: red">
+    {{ getErrorMessage(entityForm.get('age').errors) }}
+  </small><br/>
   <textarea [formControl]="entityForm.get('description')" placeholder="description">
   </textarea><br/>
 

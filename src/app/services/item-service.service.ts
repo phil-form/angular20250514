@@ -5,10 +5,27 @@ import {Item} from '../exercices/models/item.model';
   providedIn: 'root'
 })
 export class ItemService {
-  private items: Item[] = [];
-  private seq = 1;
+  private items: Item[] = [
+    {
+      id: 1,
+      name: 'asdf',
+      price: 100,
+      quantity: 20
+    },
+    {
+      id: 2,
+      name: 'qwer',
+      price: 100,
+      quantity: 20
+    },
+  ];
+  private seq = 3;
 
   constructor() { }
+
+  public getById(id: number): Item {
+    return this.items.find(item => item.id == id);
+  }
 
   public getAll(): Item[] {
     return this.items;

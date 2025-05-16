@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Person} from '../../exercices/models/person.model';
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-demo-form',
@@ -19,7 +20,8 @@ export class DemoFormComponent implements OnInit {
   }
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private authService: AuthService,
   )
   {}
 
@@ -32,8 +34,29 @@ export class DemoFormComponent implements OnInit {
       description: [null],
     });
 
+    for (const entityFormKey in this.entityForm.controls) {
+      switch (entityFormKey) {
+        case 'firstName':
+        case 'lastName':
+        case 'email':
+          if(!this.authService.hasRight('ADMIN')) {
+            this.entityForm.get('firstName').disable();
+            this.entityForm.get('lastName').disable();
+            this.entityForm.get('email').disable();
+          }
+        case 'age':
+        case 'description':
+          break;
+      }
+    }
+
     // example update depuis la db :
-    // this.entityForm.patchValue(this.person);
+    this.entityForm.patchValue(this.person);
+  }
+
+  cannotEdit() {
+    let val = !this.authService.hasRight('ADMIN');
+    return val;
   }
 
   getErrorMessage(error: any) {

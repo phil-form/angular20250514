@@ -7,12 +7,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DemoComponent } from './demos/demo/demo.component';
 import { DemoFormComponent } from './demos/demo-form/demo-form.component';
 import {FlexModule} from '@angular/flex-layout';
+import { DemoRoutingComponent } from './demos/demo-routing/demo-routing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
     DemoFormComponent,
+    DemoRoutingComponent,
   ],
   imports: [
     BrowserModule,

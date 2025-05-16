@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DemoComponent} from './demos/demo/demo.component';
 import {DemoFormComponent} from './demos/demo-form/demo-form.component';
+import {DemoRoutingComponent} from './demos/demo-routing/demo-routing.component';
+import {adminGuard} from './modules/shared/guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -16,6 +18,13 @@ const routes: Routes = [
   {
     path: 'demo-form',
     component: DemoFormComponent,
+    // canActivate: [
+    //   adminGuard,
+    // ]
+  },
+  {
+    path: 'demo-route/:id',
+    component: DemoRoutingComponent,
   },
   {
     path: 'exercices',

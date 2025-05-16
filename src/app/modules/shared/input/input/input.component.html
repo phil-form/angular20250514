@@ -1,8 +1,11 @@
 <input *ngIf="type !== 'textarea'" [type]="type"
        [placeholder]="placeholder"
        (change)="onValueChange($event)"
+       [disabled]="!!disabled"
        [formControl]="control">
-<textarea *ngIf="type === 'textarea'" [placeholder]="placeholder" [formControl]="control">
+<textarea *ngIf="type === 'textarea'"
+          [disabled]="disabled"
+          [placeholder]="placeholder" [formControl]="control">
 </textarea>
 <app-input-error *ngIf="control.errors" [errors]="control.errors">
 </app-input-error>

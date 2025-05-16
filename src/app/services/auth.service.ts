@@ -5,4 +5,16 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
+  private user = {
+    username: 'asdf',
+    rights: [
+      // 'ADMIN',
+      'USER',
+      'GUEST',
+    ]
+  };
+
+  public hasRight(right: string) {
+    return !!this.user?.rights.includes(right);
+  }
 }
