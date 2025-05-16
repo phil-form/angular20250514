@@ -1,0 +1,4 @@
+<p>{{ task.title }} <button (click)="doAction()" [disabled]="!isEnabled">{{ task.actions() }}</button></p>
+<ng-container *ngIf="task.childrem && task.childrem.length">
+  <app-embedded *ngFor="let child of task.childrem" [task]="child"></app-embedded>
+</ng-container>

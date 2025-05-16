@@ -18,7 +18,7 @@ export class ItemFormComponent {
   }
 
   submit() {
-    this.itemService.post(this.item);
+    this.itemService.post(this.item).subscribe();
     this.item = {} as Item;
     this.addItemEmitter.emit(null);
   }
