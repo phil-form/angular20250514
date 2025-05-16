@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from './services/auth.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,16 @@ import {AuthService} from './services/auth.service';
 export class AppComponent implements OnInit {
   title = 'untitled2';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private translate: TranslateService,
+  )
+  {
+    this.translate.addLangs(['en', 'fr']);
+    this.translate.setDefaultLang('fr');
+    this.translate.use('en');
+  }
 
   ngOnInit(): void {
     this.authService.logout();
