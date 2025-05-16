@@ -22,6 +22,10 @@ export class DemoRoutingComponent implements OnInit {
   ngOnInit() {
     let id = this.activatedRoute.snapshot.params['id'];
 
+    this.itemService.find(5, {
+
+    })
+
     if(!isNaN(id)) {
       this.item = this.itemService.getById(id);
     }
